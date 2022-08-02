@@ -9,10 +9,6 @@ AS              = msp430-elf-gcc -mmcu=${CPU} -c
 
 all: proj.elf
 
-libs:
-	(cd timerLib && make install)
-	(cd lcdLib && make install)
-
 #additional rules for files
 proj.elf: ${COMMON_OBJECTS}
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -lTimer -lLcd 
@@ -21,7 +17,5 @@ load: proj.elf
 	msp430loader.sh $^
 
 clean:
-	(cd timerLib && make clean)
-	(cd lcdLib && make clean)
 	rm -rf lib h
 	rm -f *.o *.elf
