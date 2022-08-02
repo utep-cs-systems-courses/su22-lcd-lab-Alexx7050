@@ -31,7 +31,7 @@ Two types are defined (used as shortcut to typing "unsigned [type]"):
      - drawChar5x7, drawString5x7: draws characters/strings at
      particular locations
 
- - font5x7.c, font11x16.c font8x12.c: tables of bitmapped fonts
+ - font5x7.c: tables of bitmapped fonts
 
 ## Demo code
 
