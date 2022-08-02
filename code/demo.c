@@ -1,9 +1,9 @@
 #include <msp430.h>
 #include <libTimer.h>
 #include "switches.h"
-#include "screen.h"
 #include "lcdutils.h"
 #include "lcddraw.h"
+#include "demo.h"
 
 void draw_ball(int col, int row, unsigned short color)
 {
