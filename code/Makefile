@@ -1,4 +1,4 @@
-COMMON_OBJECTS  = main.o switches.o wdt_handler.o
+COMMON_OBJECTS  = main.o switches.o wdt_handler.o demo.o
 CPU             = msp430g2553
 CFLAGS          = -mmcu=${CPU} -Os -I./h
 LDFLAGS         = -L./lib -L/opt/ti/msp430_gcc/include/ 
