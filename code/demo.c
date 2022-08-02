@@ -71,3 +71,15 @@ void position_update_ball()
       ballControlPos[1] = newRow;
   }
 }
+
+short redrawScreen = 1;
+
+void wdt_c_handler()
+{
+  static int secCount = 0;
+  if (++secCount >= 20) {		// 12.5/sec
+    position_update_ball();
+    redrawScreen = 1;
+    secCount = 0;
+  }
+}
