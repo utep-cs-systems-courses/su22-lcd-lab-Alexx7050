@@ -1,6 +1,8 @@
 #ifndef screen_included
 #define screen_included
 
-void update_ball();
+extern short redrawScreen;
+
+void screen_update_ball();
 
 #endif
