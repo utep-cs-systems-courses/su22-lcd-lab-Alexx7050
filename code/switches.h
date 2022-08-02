@@ -11,6 +11,5 @@ int switches;
 
 void switch_init(); // setup switch
 void switch_interrupt_handler();
-char switch_update_interrupt_sense();
 
 #endif // included
