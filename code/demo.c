@@ -37,9 +37,6 @@ void bounce_ball(char at_pos)
   ballRowVelocity  = -ballRowVelocity;
 }
 
-char score[2] = {'0','0'};
-char prev_score[2] = {'1','1'};
-
 void position_update_ball()
 {
   {   // move ball horizontally
