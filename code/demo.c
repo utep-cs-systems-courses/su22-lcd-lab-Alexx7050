@@ -73,20 +73,10 @@ void wdt_c_handler()
 
   secCount ++;
   if (secCount >= 25) {		/* 10/sec */
-   
-    {				/* move ball */
-      short oldCol = controlPos[0];
-      short newCol = oldCol + colVelocity;
-      if (newCol <= colLimits[0] || newCol >= colLimits[1])
-	colVelocity = -colVelocity;
-      else
-	controlPos[0] = newCol;
-    }
-
-    {				/* update hourglass */
-      if (switches & SW3) green = (green + 1) % 64;
+	  
+      if (switches & SW1) position_update_ball();
       if (switches & SW2) blue = (blue + 2) % 32;
-      if (switches & SW1) red = (red - 3) % 32;
+      if (switches & SW3) red = (red - 3) % 32;
       if (step <= 30)
 	step ++;
       else
