@@ -69,14 +69,16 @@ void draw_ptrn()
   for (unsigned char col = 0; col < screenHeight; col++)
     {
       for(unsigned char row = 0; row < screenWidth; row++)
-	{ 
-	  if(col % 2 == 0)
-	    {
-	      fillRectangle(row, col, 5, 5, COLOR_DEEP);
-	    }
-	  else
-	    fillRectangle(col, row, 5, 5, COLOR_FIREBRICK);
-	}
+	      
+	      fillRectangle(row, col, 5, 5, COLOR_AQUAMARINE);
+// 	{ 
+// 	  if(col % 2 == 0)
+// 	    {
+// 	      fillRectangle(row, col, 5, 5, COLOR_AQUAMARINE);
+// 	    }
+// 	  else
+// 	    fillRectangle(col, row, 5, 5, COLOR_FIREBRICK);
+// 	}
     }
 }
 
