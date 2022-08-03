@@ -57,9 +57,6 @@ void position_update_ball()
       else
         bounce_ball(0);
     }
-    else if (newRow >= ballRowLim[1]) {  // ball in lower row screen edge
-      if (ballControlPos[0]+2 < ballControlPos[1]-5 || ballControlPos[0] > ballControlPos[1]+8)
-        score[0]++;
       else
         bounce_ball(1);
     }
