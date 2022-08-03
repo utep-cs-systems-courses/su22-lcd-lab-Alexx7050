@@ -75,7 +75,8 @@ void wdt_c_handler()
 	  
     {
       if (switches & SW1) position_update_ball();
-      if (switches & SW2) buzzer_set_period(500);
+      if (switches & SW2) buzzer_set_period(1000);
+	    return;
 //       if (switches & SW3) return;
       if (step <= 30)
 	step ++;
@@ -83,7 +84,11 @@ void wdt_c_handler()
 	step = 0;
       secCount = 0;
     }
-    if (switches & SW4) return;
+    if (switches & SW4)
+    {
+       buzzer_set_period(1000);
+       return;
+    }
     redrawScreen = 1;
   }
 }
