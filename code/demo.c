@@ -55,10 +55,10 @@ void position_update_ball()
     short oldRow = ballControlPos[1];
     short newRow = oldRow + ballRowVelocity;
     if (newRow <= ballRowLim[0]) {      // ball in upper row screen edge
-      ballColVelocity -= 2;
+      bounce_ball(0);
     }
     else if (newRow >= ballRowLim[1]) {  // ball in lower row screen edge
-      ballColVelocity += 2;
+      bounce_ball(1);
     }
     else
       ballControlPos[1] = newRow;
