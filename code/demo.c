@@ -95,6 +95,7 @@ void wdt_c_handler()
 void update_shape()
 {
   screen_update_ball();
+  draw_ptrn();
 }
 
 void draw_ptrn()
