@@ -72,8 +72,8 @@ void wdt_c_handler()
   if (secCount >= 25) {		/* 10/sec */
 	  
       if (switches & SW1) position_update_ball();
-      if (switches & SW2) blue = (blue + 2) % 32;
-      if (switches & SW3) red = (red - 3) % 32;
+      if (switches & SW2) return;
+      if (switches & SW3) return;
       if (step <= 30)
 	step ++;
       else
