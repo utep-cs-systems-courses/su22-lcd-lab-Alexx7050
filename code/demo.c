@@ -75,7 +75,7 @@ void wdt_c_handler()
     {
       if (switches & SW1) position_update_ball();
       if (switches & SW2) buzzer_set_period(1000);
-//       if (switches & SW3) return;
+      if (switches & SW3) draw_ptrn();
       if (step <= 30)
 	step ++;
       else
@@ -95,4 +95,21 @@ void wdt_c_handler()
 void update_shape()
 {
   screen_update_ball();
+}
+
+void draw_ptrn()
+{
+  for (unsigned char col = 0; col < screenHeight; col++)
+    {
+      for(unsigned char row = 0; row < screenWidth; row++)
+	{ 
+	  if(col % 2 == 0)
+	    {
+	      fillRectangle(row, col, 5, 5, COLOR_SKY_BLUE);
+	    }
+	  else
+	    fillRectangle(col, row, 5, 5, COLOR_LIME_GREEN);
+	}
+    }
+    buzzer_set_period(0);
 }
