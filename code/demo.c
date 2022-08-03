@@ -32,7 +32,7 @@ void screen_update_ball()
 
 void bounce_ball(char at_pos)
 {
-  if (ballControlPos[0]+1 < ballControlPos[at_pos] && ballColVelocity > -4)
+  if (ballControlPos[0]+1 < screenHeight && ballColVelocity > -4)
     ballColVelocity -= 2;
   else if (ballControlPos[0]+1 > ballControlPos[at_pos] && ballColVelocity < 4)
     ballColVelocity += 2;
@@ -54,10 +54,10 @@ void position_update_ball()
     short oldRow = ballControlPos[1];
     short newRow = oldRow + ballRowVelocity;
     if (newRow <= ballRowLim[0]) {      // ball in upper row screen edge
-      bounce_ball(0);
+      ballColVelocity -= 2;
     }
     else if (newRow >= ballRowLim[1]) {  // ball in lower row screen edge
-      bounce_ball(1);
+      ballColVelocity += 2;
     }
     else
       ballControlPos[1] = newRow;
@@ -75,7 +75,7 @@ void wdt_c_handler()
 	  
     {
       if (switches & SW1) position_update_ball();
-//       if (switches & SW2) return;
+      if (switches & SW2) buzzer_set_period(500);
 //       if (switches & SW3) return;
       if (step <= 30)
 	step ++;
