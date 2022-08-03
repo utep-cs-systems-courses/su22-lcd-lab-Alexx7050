@@ -4,7 +4,6 @@
 #include "lcdutils.h"
 #include "lcddraw.h"
 #include "demo.h"
-
 void draw_ball(int col, int row, unsigned short color)
 {
   fillRectangle(col-1, row-1, 3, 3, color);
@@ -31,9 +30,9 @@ void screen_update_ball()
 void bounce_ball(char at_bar)
 {
   //If ball doesn't hit the center of the bar, make the ball move two pixels faster to that direction where the ball hit the bar
-  if (ballControlPos[0]+1 < barControlPos[at_bar] && ballColVelocity > -4)
+  if (ballControlPos[0]+1 < ballControlPos[at_bar] && ballColVelocity > -4)
     ballColVelocity -= 2;
-  else if (ballControlPos[0]+1 > barControlPos[at_bar] && ballColVelocity < 4)
+  else if (ballControlPos[0]+1 > ballControlPos[at_bar] && ballColVelocity < 4)
     ballColVelocity += 2;
   ballRowVelocity  = -ballRowVelocity;
 }
@@ -56,13 +55,13 @@ void position_update_ball()
     short oldRow = ballControlPos[1];
     short newRow = oldRow + ballRowVelocity;
     if (newRow <= ballRowLim[0]) {      // ball in upper row screen edge
-      if (ballControlPos[0]+2 < barControlPos[0]-5 || ballControlPos[0] > barControlPos[0]+8)
+      if (ballControlPos[0]+2 < ballControlPos[0]-5 || ballControlPos[0] > ballControlPos[0]+8)
         score[1]++;
       else
         bounce_ball(0);
     }
     else if (newRow >= ballRowLim[1]) {  // ball in lower row screen edge
-      if (ballControlPos[0]+2 < barControlPos[1]-5 || ballControlPos[0] > barControlPos[1]+8)
+      if (ballControlPos[0]+2 < ballControlPos[1]-5 || ballControlPos[0] > ballControlPos[1]+8)
         score[0]++;
       else
         bounce_ball(1);
