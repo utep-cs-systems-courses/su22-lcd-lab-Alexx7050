@@ -70,10 +70,31 @@ short redrawScreen = 1;
 void wdt_c_handler()
 {
   static int secCount = 0;
-  if (++secCount >= 20) {		// 12.5/sec
-    position_update_ball();
+
+  secCount ++;
+  if (secCount >= 25) {		/* 10/sec */
+   
+    {				/* move ball */
+      short oldCol = controlPos[0];
+      short newCol = oldCol + colVelocity;
+      if (newCol <= colLimits[0] || newCol >= colLimits[1])
+	colVelocity = -colVelocity;
+      else
+	controlPos[0] = newCol;
+    }
+
+    {				/* update hourglass */
+      if (switches & SW3) green = (green + 1) % 64;
+      if (switches & SW2) blue = (blue + 2) % 32;
+      if (switches & SW1) red = (red - 3) % 32;
+      if (step <= 30)
+	step ++;
+      else
+	step = 0;
+      secCount = 0;
+    }
+    if (switches & SW4) return;
     redrawScreen = 1;
-    secCount = 0;
   }
 }
 
