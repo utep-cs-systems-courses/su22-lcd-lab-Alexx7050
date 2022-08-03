@@ -66,7 +66,7 @@ void position_update_ball()
 
 short redrawScreen = 1;
 
-void update_shape()
+void wdt_c_handler()
 {
   static int secCount = 0;
 
