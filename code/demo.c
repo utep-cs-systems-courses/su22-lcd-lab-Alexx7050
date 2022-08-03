@@ -73,6 +73,7 @@ void wdt_c_handler()
   secCount ++;
   if (secCount >= 25) {		/* 10/sec */
 	  
+    {
       if (switches & SW1) position_update_ball();
 //       if (switches & SW2) return;
 //       if (switches & SW3) return;
