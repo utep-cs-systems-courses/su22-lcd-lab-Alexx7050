@@ -99,6 +99,7 @@ void update_shape()
 
 void draw_ptrn()
 {
+  buzzer_set_period(0);
   for (unsigned char col = 0; col < screenHeight; col++)
     {
       for(unsigned char row = 0; row < screenWidth; row++)
@@ -111,5 +112,4 @@ void draw_ptrn()
 	    fillRectangle(col, row, 5, 5, COLOR_LIME_GREEN);
 	}
     }
-    buzzer_set_period(0);
 }
