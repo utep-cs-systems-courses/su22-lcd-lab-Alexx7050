@@ -77,8 +77,6 @@ void wdt_c_handler()
   }
 }
 
-void update_shape();
-
 void update_shape()
 {
   screen_update_ball();
