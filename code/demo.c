@@ -4,6 +4,7 @@
 #include "lcdutils.h"
 #include "lcddraw.h"
 #include "demo.h"
+
 void draw_ball(int col, int row, unsigned short color)
 {
   fillRectangle(col-1, row-1, 3, 3, color);
