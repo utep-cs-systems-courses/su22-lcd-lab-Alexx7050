@@ -82,3 +82,8 @@ void wdt_c_handler()
     secCount = 0;
   }
 }
+
+void update_shape()
+{
+  screen_update_ball();
+}
