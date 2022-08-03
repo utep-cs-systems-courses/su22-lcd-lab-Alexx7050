@@ -3,6 +3,6 @@
 
 extern short redrawScreen;
 
-void screen_update_ball();
+void update_shape();
 
 #endif
