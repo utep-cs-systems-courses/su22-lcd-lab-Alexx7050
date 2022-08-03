@@ -95,7 +95,6 @@ void wdt_c_handler()
 void update_shape()
 {
   screen_update_ball();
-  draw_ptrn();
 }
 
 void draw_ptrn()
@@ -107,10 +106,10 @@ void draw_ptrn()
 	{ 
 	  if(col % 2 == 0)
 	    {
-	      fillRectangle(row, col, 5, 5, COLOR_SKY_BLUE);
+	      fillRectangle(row, col, 5, 5, COLOR_DEEP);
 	    }
 	  else
-	    fillRectangle(col, row, 5, 5, COLOR_LIME_GREEN);
+	    fillRectangle(col, row, 5, 5, COLOR_LIME_FIREBRICK);
 	}
     }
 }
