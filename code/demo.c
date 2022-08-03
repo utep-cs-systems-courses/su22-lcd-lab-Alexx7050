@@ -86,7 +86,7 @@ void wdt_c_handler()
     }
     if (switches & SW4)
     {
-       buzzer_set_period(1000);
+       buzzer_set_period(0);
        return;
     }
     redrawScreen = 1;
