@@ -63,6 +63,23 @@ void position_update_ball()
   }
 }
 
+void draw_ptrn()
+{
+  buzzer_set_period(0);
+  for (unsigned char col = 0; col < screenHeight; col++)
+    {
+      for(unsigned char row = 0; row < screenWidth; row++)
+	{ 
+	  if(col % 2 == 0)
+	    {
+	      fillRectangle(row, col, 5, 5, COLOR_DEEP);
+	    }
+	  else
+	    fillRectangle(col, row, 5, 5, COLOR_FIREBRICK);
+	}
+    }
+}
+
 short redrawScreen = 1;
 
 void wdt_c_handler()
@@ -95,21 +112,4 @@ void wdt_c_handler()
 void update_shape()
 {
   screen_update_ball();
-}
-
-void draw_ptrn()
-{
-  buzzer_set_period(0);
-  for (unsigned char col = 0; col < screenHeight; col++)
-    {
-      for(unsigned char row = 0; row < screenWidth; row++)
-	{ 
-	  if(col % 2 == 0)
-	    {
-	      fillRectangle(row, col, 5, 5, COLOR_DEEP);
-	    }
-	  else
-	    fillRectangle(col, row, 5, 5, COLOR_LIME_FIREBRICK);
-	}
-    }
 }
