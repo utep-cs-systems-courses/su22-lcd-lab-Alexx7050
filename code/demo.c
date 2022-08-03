@@ -29,7 +29,6 @@ void screen_update_ball()
 
 void bounce_ball(char at_bar)
 {
-  //If ball doesn't hit the center of the bar, make the ball move two pixels faster to that direction where the ball hit the bar
   if (ballControlPos[0]+1 < ballControlPos[at_bar] && ballColVelocity > -4)
     ballColVelocity -= 2;
   else if (ballControlPos[0]+1 > ballControlPos[at_bar] && ballColVelocity < 4)
