@@ -66,7 +66,12 @@ void position_update_ball()
 void draw_ptrn()
 {
   buzzer_set_period(0);
-  for (unsigned char col = 0; col < screenHeight; col++)
+  for (unsigned char col = 0; col < screenHeight/2; col++)
+    {
+      for(unsigned char row = 0; row < screenWidth; row++)
+	fillRectangle(row, col, 5, 5, COLOR_AQUAMARINE);
+    }
+  for (unsigned char col = screenHeight; col < screenHeight/2; col--)
     {
       for(unsigned char row = 0; row < screenWidth/2; row++)
 	fillRectangle(row, col, 5, 5, COLOR_AQUAMARINE);
