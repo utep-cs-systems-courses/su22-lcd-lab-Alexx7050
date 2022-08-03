@@ -23,7 +23,7 @@ void main(void)
   while (1) {     /* forever */
     if (redrawScreen) {
       redrawScreen = 0;
-      screen_update_ball();
+      update_shape();
     }
     P1OUT &= ~LED;  /* led off */
     or_sr(0x10);    /**< CPU OFF */
