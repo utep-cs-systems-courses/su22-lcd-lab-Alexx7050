@@ -68,17 +68,8 @@ void draw_ptrn()
   buzzer_set_period(0);
   for (unsigned char col = 0; col < screenHeight; col++)
     {
-      for(unsigned char row = 0; row < screenWidth; row++)
-	      
-	      fillRectangle(row, col, 5, 5, COLOR_AQUAMARINE);
-// 	{ 
-// 	  if(col % 2 == 0)
-// 	    {
-// 	      fillRectangle(row, col, 5, 5, COLOR_AQUAMARINE);
-// 	    }
-// 	  else
-// 	    fillRectangle(col, row, 5, 5, COLOR_FIREBRICK);
-// 	}
+      for(unsigned char row = 0; row < screenWidth/2; row++)
+	fillRectangle(row, col, 5, 5, COLOR_AQUAMARINE);
     }
 }
 
