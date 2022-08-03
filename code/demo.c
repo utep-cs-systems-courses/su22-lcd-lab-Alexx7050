@@ -5,6 +5,8 @@
 #include "lcddraw.h"
 #include "demo.h"
 
+unsigned char step = 0;
+
 void draw_ball(int col, int row, unsigned short color)
 {
   fillRectangle(col-1, row-1, 3, 3, color);
@@ -72,8 +74,8 @@ void wdt_c_handler()
   if (secCount >= 25) {		/* 10/sec */
 	  
       if (switches & SW1) position_update_ball();
-      if (switches & SW2) return;
-      if (switches & SW3) return;
+//       if (switches & SW2) return;
+//       if (switches & SW3) return;
       if (step <= 30)
 	step ++;
       else
