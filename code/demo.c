@@ -35,7 +35,7 @@ void bounce_ball(char at_pos)
 {
   if (ballControlPos[0]+1 < screenHeight && ballColVelocity > -4)
     ballColVelocity -= 2;
-  else if (ballControlPos[0]+1 > ballControlPos[at_pos] && ballColVelocity < 4)
+  else if (ballControlPos[0]+1 > screenHeight && ballColVelocity < 4)
     ballColVelocity += 2;
   ballRowVelocity  = -ballRowVelocity;
 }
