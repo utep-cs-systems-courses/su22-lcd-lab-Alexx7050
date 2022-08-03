@@ -3,6 +3,7 @@
 #include "switches.h"
 #include "lcdutils.h"
 #include "lcddraw.h"
+#include "buzzer.h"
 #include "demo.h"
 
 // WARNING: LCD DISPLAY USES P1.0.  Do not touch!!! 
