@@ -22,7 +22,7 @@ void screen_update_ball()
       goto redraw;
   return;			// nothing to do
  redraw:
-  draw_ball(ballDrawPos[0], ballDrawPos[1], COLOR_WHITE);  // erase
+  draw_ball(ballDrawPos[0], ballDrawPos[1], COLOR_BLACK);  // erase
   for (char axis = 0; axis < 2; axis++) 
     ballDrawPos[axis] = ballControlPos[axis];
   draw_ball(ballDrawPos[0], ballDrawPos[1], COLOR_WHITE); // draw
