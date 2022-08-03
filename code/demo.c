@@ -3,6 +3,7 @@
 #include "switches.h"
 #include "lcdutils.h"
 #include "lcddraw.h"
+#include "buzzer.h"
 #include "demo.h"
 
 unsigned char step = 0;
