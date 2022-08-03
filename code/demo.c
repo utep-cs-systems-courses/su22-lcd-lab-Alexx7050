@@ -71,9 +71,9 @@ void draw_ptrn()
       for(unsigned char row = 0; row < screenWidth; row++)
 	fillRectangle(row, col, 5, 5, COLOR_AQUAMARINE);
     }
-  for (unsigned char col = screenHeight; col < screenHeight/2; col--)
+  for (unsigned char col = screenHeight; col > 0; col--)
     {
-      for(unsigned char row = 0; row < screenWidth/2; row++)
+      for(unsigned char row = screenWidth; row >; row++)
 	fillRectangle(row, col, 5, 5, COLOR_AQUAMARINE);
     }
 }
