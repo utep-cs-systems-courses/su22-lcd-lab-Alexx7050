@@ -55,19 +55,18 @@ void position_update_ball()
     short oldRow = ballControlPos[1];
     short newRow = oldRow + ballRowVelocity;
     if (newRow <= ballRowLim[0]) {      // ball in upper row screen edge
-      bounce_ball(0);
+      ballColVelocity -= 2;
     }
     else if (newRow >= ballRowLim[1]) {  // ball in lower row screen edge
-      bounce_ball(1);
+      ballColVelocity += 2;
     }
-    else
-      ballControlPos[1] = newRow;
+
   }
 }
 
 short redrawScreen = 1;
 
-void wdt_c_handler()
+void update_shape()
 {
   static int secCount = 0;
 
